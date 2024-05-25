@@ -55,7 +55,7 @@ esac
 # Start with last known versions to speed up lookup process.
 #
 LAST_KNOWN_LIBTOOL_VER="2.4.7"
-vers="2.4.7 2.4.6 2.4.4 2.4.2 2.4 2.2.10 2.2.6b 2.2.6 2.2.4 1.5.26"
+vers="2.4.7 2.4.6 2.4.5 2.4.4 2.4.2 2.4 2.2.10 2.2.6b 2.2.6 2.2.4 1.5.26"
 
 #
 # Helper to scan for a usable program based on version.
