@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2025 Gentoo / HiGFXback Authors
 # Distributed under the terms of the GNU General Public License v2
 
 NAME="libtool"
@@ -55,7 +55,7 @@ esac
 # Start with last known versions to speed up lookup process.
 #
 LAST_KNOWN_LIBTOOL_VER="2.4.7"
-vers="2.4.7 2.4.6 2.4.5 2.4.4 2.4.2 2.4 2.2.10 2.2.6b 2.2.6 2.2.4 1.5.26"
+vers="2.4.7 2.4.6 2.4.5 2.4.4 2.4.2 2.4 2.2.10 2.2.6b 2.2.6 2.2.4 1.5.24"
 
 #
 # Helper to scan for a usable program based on version.
@@ -100,7 +100,7 @@ if [ -z "${binary}" ] && [ -n "${WANT_LIBTOOL}" ] ; then
 fi
 
 if [ -z "${binary}" ] ; then
-	err "Unable to locate any usuable version of ${NAME}.\n" \
+	err "Unable to locate any usable version of ${NAME}.\n" \
 	    "\tI tried these versions:${all_vers}\n" \
 	    "\tWith a base name of '${full_argv0}'."
 fi
@@ -115,7 +115,7 @@ if [ -z "${WANT_LIBTOOL}" ] ; then
 	if [ -r "${ltmain_sh}" ] ; then
 		auto_vers=$(sed -n -E 's/^# (libtool|ltmain\.sh) \(GNU libtool\) (.*)/\2/p' ${ltmain_sh})
 		if [ -z "${auto_vers}" ] ; then
-			auto_vers=1.5.26
+			auto_vers=1.5.24
 		fi
 	fi
 	# We don't need to set $binary here as it has already been setup for us
