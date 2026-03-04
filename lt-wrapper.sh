@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 1999-2025 Gentoo / HiGFXback Authors
+# Copyright 1999-2026 Gentoo / HiGFXback Authors
 # Distributed under the terms of the GNU General Public License v2
 
 NAME="libtool"
@@ -55,7 +55,7 @@ esac
 # Start with last known versions to speed up lookup process.
 #
 LAST_KNOWN_LIBTOOL_VER="2.4.7"
-vers="2.4.7 2.4.6 2.4.5 2.4.4 2.4.2 2.4 2.2.10 2.2.6b 2.2.6 2.2.4 1.5.24"
+vers="2.4.7 2.4.6 2.4.5 2.4.4 2.4.2 2.4 2.2.10 2.2.7a 2.2.6b 2.2.6 2.2.4 1.5.24"
 
 #
 # Helper to scan for a usable program based on version.
@@ -113,7 +113,7 @@ if [ -z "${WANT_LIBTOOL}" ] ; then
 	dir=$(grep AC_CONFIG_AUX_DIR configure.[ai][cn] | sed -n 's/AC_CONFIG_AUX_DIR(\(.*\))/\1/p' | sed 's/\[\(.*\)\]/\1/')
 	[[ ! -z ${dir} ]] && ltmain_sh=${dir}/ltmain.sh || ltmain_sh=ltmain.sh
 	if [ -r "${ltmain_sh}" ] ; then
-		auto_vers=$(sed -n -E 's/^# (libtool|ltmain\.sh) \(GNU libtool\) (.*)/\2/p' ${ltmain_sh})
+		auto_vers=$(sed -n -E 's/^# (libtool|ltmain\.sh) \(GNU libtool[^)]*\) (.*)/\2/p' ${ltmain_sh})
 		if [ -z "${auto_vers}" ] ; then
 			auto_vers=1.5.24
 		fi
